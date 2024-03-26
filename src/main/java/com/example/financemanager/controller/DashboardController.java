@@ -93,7 +93,7 @@ public class DashboardController {
         XYChart.Series<String, Float> seriesOther = new XYChart.Series<>();
         seriesOther.setName("Autres");
         XYChart.Series<String, Float> seriesTotal = new XYChart.Series<>();
-        seriesTotal.setName("Dépenses");
+        seriesTotal.setName("Mes dépenses");
 
         lastExpenses.stream().sorted(Comparator.comparing(Expense::getDate)).forEach(expense -> {
             seriesHousing.getData().add(new XYChart.Data<>(expense.getDate().format(DATE_FORMAT), expense.getHousing()));
@@ -136,7 +136,7 @@ public class DashboardController {
         barChart.getData().clear();
 
         XYChart.Series<String, Float> seriesTotal = new XYChart.Series<>();
-        seriesTotal.setName("Revenus");
+        seriesTotal.setName("Mes revenus");
 
         lastIncomes.stream().sorted(Comparator.comparing(Income::getDate)).forEach(income -> {
             seriesTotal.getData().add(new XYChart.Data<>(income.getDate().format(DATE_FORMAT), income.getTotal()));

@@ -32,7 +32,7 @@
                 </LineChart>
             </HBox>
             <HBox alignment="CENTER">
-                <BarChart fx:id="barChart" title="Dépenses VS revenus">
+                <BarChart fx:id="barChart" title="Vais-je devenir riche ?">
                     <xAxis>
                         <CategoryAxis fx:id="xAxis2" side="BOTTOM" label="Date"/>
                     </xAxis>

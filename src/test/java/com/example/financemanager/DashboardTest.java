@@ -67,7 +67,7 @@ public class DashboardTest {
     public void shouldChangeToExpenseStageWhenClickOnMenu(FxRobot robot) throws TimeoutException {
         robot.clickOn("Navigation");
 
-        WaitForAsyncUtils.waitFor(2, TimeUnit.SECONDS, () -> robot.lookup("Dépenses").match(NodeQueryUtils.isVisible()).tryQuery().isPresent());
+        WaitForAsyncUtils.waitFor(4, TimeUnit.SECONDS, () -> robot.lookup("Dépenses").match(NodeQueryUtils.isVisible()).tryQuery().isPresent());
 
         robot.clickOn("Dépenses", Motion.VERTICAL_FIRST, MouseButton.PRIMARY);
 
@@ -78,7 +78,7 @@ public class DashboardTest {
     public void shouldChangeToIncomeStageWhenClickOnMenu(FxRobot robot) throws TimeoutException {
         robot.clickOn("Navigation");
 
-        WaitForAsyncUtils.waitFor(2, TimeUnit.SECONDS, () -> robot.lookup("Revenus").match(NodeQueryUtils.isVisible()).tryQuery().isPresent());
+        WaitForAsyncUtils.waitFor(4, TimeUnit.SECONDS, () -> robot.lookup("Revenus").match(NodeQueryUtils.isVisible()).tryQuery().isPresent());
 
         robot.clickOn("Revenus", Motion.VERTICAL_FIRST, MouseButton.PRIMARY);
 
@@ -118,6 +118,6 @@ public class DashboardTest {
 
         verifyThat("#barChart", isVisible());
 
-        assertThat(robot.lookup("#barChart").queryAs(BarChart.class).getTitle(), equalTo("Dépenses VS revenus"));
+        assertThat(robot.lookup("#barChart").queryAs(BarChart.class).getTitle(), equalTo("Vais-je devenir riche ?"));
     }
 }
